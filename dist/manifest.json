@@ -9,6 +9,14 @@
     "imageUrl": "https://kinopoisk.userecho.com/s/attachments/28876/0/1/25f8c0315e6ccb2aa6c2642e48f2c9e9.png",
     "versions": [
       {
+        "version": "10.10.1.0",
+        "checksum": "6607f466b207e2e980f142e317ffb989",
+        "changelog": "Реализован IExternalUrlProvider (ссылки на кинопоиск)",
+        "targetAbi": "10.10.0",
+        "sourceUrl": "https://github.com/LinFor/jellyfin-plugin-kinopoisk/releases/download/v10.10.1.0/jellyfin-plugin-kinopoisk_10.10.1.0.zip",
+        "timestamp": "2026-01-15T21:37:12Z"
+      },
+      {
         "version": "10.9.8.0",
         "checksum": "8ce2e57a7411c393a5ac23d31f50265a",
         "changelog": "Перенесён значимый код из форка уважаемого @VD42",
