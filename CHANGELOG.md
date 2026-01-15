@@ -1,5 +1,9 @@
 # Changelog
 
+## [10.9.7.0]
+
+Fixed pluginId
+
 ## [10.9.6.0]
 
 Added YANDEX_DISK video source

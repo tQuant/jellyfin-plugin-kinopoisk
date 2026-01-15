@@ -138,7 +138,6 @@ jobs:
                "version": $VERSION,
                "checksum": $HASH,
                "changelog": $CHANGELOG,
-               "name": "КиноПоиск",
                "targetAbi": $TARGET_ABI,
                "sourceUrl": $SOURCE_URL,
                "timestamp": $TIMESTAMP
