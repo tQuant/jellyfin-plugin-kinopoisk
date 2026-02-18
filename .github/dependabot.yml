@@ -9,3 +9,11 @@ updates:
     directory: "/src" # Location of package manifests
     schedule:
       interval: "weekly"
+    ignore:
+      - dependency-name: "Jellyfin.*"
+        update-types:
+          - version-update:semver-major
+          - version-update:semver-minor
+      - dependency-name: "Microsoft.*"
+        update-types:
+          - version-update:semver-major
