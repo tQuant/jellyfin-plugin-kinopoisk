@@ -101,6 +101,7 @@ namespace Jellyfin.Plugin.Kinopoisk
             dst.Name = src.GetLocalName();
             dst.OriginalTitle = src.GetOriginalNameIfNotSame();
             dst.PremiereDate = src.GetPremiereDate();
+            dst.ProductionYear = src.Year;
             if (!string.IsNullOrWhiteSpace(src.Slogan))
                 dst.Tagline = src.Slogan;
             dst.Overview = src.Description;
@@ -110,7 +111,7 @@ namespace Jellyfin.Plugin.Kinopoisk
                 foreach(var genre in src.Genres.Select(c => c.Genre1))
                     dst.AddGenre(genre);
             if (!string.IsNullOrEmpty(src.RatingAgeLimits))
-                dst.OfficialRating = $"{src.RatingAgeLimits}+";
+                dst.OfficialRating = $"{src.RatingAgeLimits}+".Replace("age", "");
             else
                 dst.OfficialRating = src.RatingMpaa;
 
@@ -274,7 +275,13 @@ namespace Jellyfin.Plugin.Kinopoisk
                 StaffResponseProfessionKey.WRITER => PersonKind.Writer,
                 StaffResponseProfessionKey.COMPOSER => PersonKind.Composer,
                 StaffResponseProfessionKey.PRODUCER or StaffResponseProfessionKey.PRODUCER_USSR => PersonKind.Producer,
-               // _ => PersonKind,
+                StaffResponseProfessionKey.DESIGN => PersonKind.Illustrator,
+                StaffResponseProfessionKey.EDITOR => PersonKind.Editor,
+                StaffResponseProfessionKey.OPERATOR => PersonKind.Unknown,
+                StaffResponseProfessionKey.TRANSLATOR => PersonKind.Translator,
+                StaffResponseProfessionKey.VOICE_DIRECTOR => PersonKind.Unknown,
+                StaffResponseProfessionKey.UNKNOWN => PersonKind.Unknown,
+                _ => PersonKind.Unknown,
             };
         }
 
